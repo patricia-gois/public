@@ -1,0 +1,24 @@
+.img-books{
+    height: 400px; 
+    object-fit: cover;
+}
+
+.navbar .nav-link {
+    background-color: transparent; /* Background for link */
+    color: #000000; /* Text color for link */
+}
+
+.navbar .nav-link:hover {
+    background-color: #0056b3; /* Background for hover link */
+    color: #000000; /* Text color for hover link */
+}
+
+.navbar .nav-link.active {
+    background-color: #0056b3; /* Background for active link */
+    color: #fff; /* Text color for active link */
+}
+
+.navbar .dropdown-item.active {
+    background-color: #007bff; /* Active dropdown item color */
+    color: #fff; /* Text color for active dropdown item */
+}
