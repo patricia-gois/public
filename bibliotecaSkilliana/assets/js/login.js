@@ -87,26 +87,21 @@ function login(){
     url: "assets/controller/controllerLogin.php",
     method: "POST",
     data: dados,
-    dataType: "html",
+    dataType: "json",
     cache: false,
     contentType: false,
     processData: false
     })
     
-    .done(function( msg ) {
-
-        let obj = JSON.parse(msg);
-        if(obj.flag){
-            alerta("Utilizador",obj.msg,"success");
-            
-            setTimeout(function(){ 
+    .done(function(response) {
+        if(response.flag) {
+            alerta("Utilizador", response.msg, "success");
+            setTimeout(function() { 
                 window.location.href = "home.php";
             }, 2000);
-
-        }else{
-            alerta("Utilizador",obj.msg,"error");    
+        } else {
+            alerta("Utilizador", response.msg, "error");    
         }
-        
     })
     
     .fail(function( jqXHR, textStatus ) {

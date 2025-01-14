@@ -9,7 +9,7 @@ class Cinema{
         global $conn;
         $msg = "";
 
-        $sql = "INSERT INTO localidade (descricao) VALUES ('".$descricao."')";
+        $sql = "INSERT INTO local (descricao) VALUES ('".$descricao."')";
         
         if ($conn->query($sql) === TRUE) {
           $msg = "Localidade registada com sucesso!";
@@ -45,7 +45,7 @@ class Cinema{
         global $conn;
 
         $msg = "";
-        $sql = "SELECT cinema.*, localidade.descricao FROM cinema, localidade WHERE localidade.id = cinema.local_id";
+        $sql = "SELECT cinema.*, local.descricao FROM cinema, local WHERE local.id = cinema.local_id";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -144,7 +144,7 @@ class Cinema{
         global $conn;
         $msg = "<option value = '-1'>Escolha um localidade</option>";
 
-        $sql = "SELECT * FROM localidade";
+        $sql = "SELECT * FROM local";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
